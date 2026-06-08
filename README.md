@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fishability
+
+A web application that generates fishing condition forecasts for any location and time using real-time weather data.
+
+## Overview
+
+Fishability provides users with data-driven insights to optimize fishing trip planning. By analyzing environmental factors such as temperature, barometric pressure, wind conditions, and other meteorological variables, the application generates a fishability score (1-100) indicating the likelihood of successful fishing at a given location and time.
+
+## Features
+
+- **Regional and Local Search**: Select fishing locations at regional or local level
+- **Flexible Date and Time Selection**: Plan trips for any date and time
+- **Automated Scoring Algorithm**: Generates fishability scores based on environmental data
+- **Real-Time Weather Integration**: Pulls current and forecasted weather data
+- **No Authentication Required**: Instant access without sign-up
+- **Responsive Design**: Works across desktop and mobile devices
+
+## Tech Stack
+
+- **Frontend**: [Your frontend framework - e.g., React, Next.js, Vue.js]
+- **Backend**: [Your backend - e.g., Node.js, Python, etc.]
+- **Weather Data**: [Your weather API source]
+- **Hosting**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/fishability.git
+cd fishability
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Configure environment variables:
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Add your API keys:
+- Weather API key
+- Any other required credentials
 
-## Learn More
+5. Run the development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Select a region or local fishing location from the map
+2. Choose a date from the calendar
+3. Select a preferred time
+4. Click "Get Fishability Score"
+5. View your personalized fishing forecast
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+fishability/
+├── public/              # Static assets
+├── src/
+│   ├── components/      # React components
+│   ├── pages/          # Page routes
+│   ├── styles/         # CSS files
+│   ├── utils/          # Utility functions
+│   └── lib/            # Library functions
+├── .env.example        # Environment variables template
+└── package.json        # Project dependencies
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API Integration
+
+Fishability integrates with [Weather API Provider] to fetch real-time and forecasted weather data. The scoring algorithm weighs the following factors:
+
+- Temperature
+- Barometric pressure
+- Wind speed and direction
+- Cloud cover
+- Precipitation
+- Moon phase (when applicable)
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add your feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or feedback, reach out to: thenetwork.ops@gmail.com
+
+## Live Demo
+
+Visit the application at [fishability.vercel.app](https://fishability.vercel.app)
